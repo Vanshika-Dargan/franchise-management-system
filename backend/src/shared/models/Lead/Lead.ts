@@ -3,7 +3,9 @@ import mongoose, { Document, Schema,Types } from 'mongoose';
 interface Lead extends Document {
   status: 'new' | 'contacted' | 'inProgress' | 'converted';
   source: string;
-  salesRep: Types.ObjectId;
+  salesRep?: Types.ObjectId;
+  poc: Types.ObjectId;
+  externalLinks: Types.ObjectId[];
 }
 
 const LeadSchema: Schema<Lead> = new Schema({
@@ -20,7 +22,16 @@ const LeadSchema: Schema<Lead> = new Schema({
   salesRep:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'SalesRep',
-  }
+  },
+  poc:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'PointOfContact',
+  },
+
+  externalLinks:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'ExternalLink',
+  }],
 
 });
 
