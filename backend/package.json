@@ -4,7 +4,8 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "kafka":"nodemon src/shared/queue/admin.ts",
+    "admin":"nodemon src/shared/queue/admin.ts",
+    "producer":"nodemon src/shared/queue/producer.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vanshika Dargan",

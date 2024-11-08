@@ -13,7 +13,7 @@ async function init(){
     console.log('Creating Topic: salesRepAssignment...  ');
     await admin.createTopics({
         topics: [{
-            topic: 'salesRepAssignment4',
+            topic: 'salesRepAssignment',
             numPartitions: 2,
         }]
     })
