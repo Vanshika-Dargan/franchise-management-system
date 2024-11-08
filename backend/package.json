@@ -6,6 +6,7 @@
     "dev": "nodemon src/server.ts",
     "admin":"nodemon src/shared/queue/admin.ts",
     "producer":"nodemon src/shared/queue/producer.ts",
+    "consumer":"nodemon src/shared/queue/consumer.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vanshika Dargan",
