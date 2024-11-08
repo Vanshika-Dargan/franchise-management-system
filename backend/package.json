@@ -4,6 +4,7 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
+    "kafka":"nodemon src/shared/queue/admin.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vanshika Dargan",
@@ -21,6 +22,7 @@
     "express": "^4.21.1",
     "express-validator": "^7.2.0",
     "jsonwebtoken": "^9.0.2",
+    "kafkajs": "^2.2.4",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.0",
     "nodemon": "^3.1.7",
