@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import User from '../../shared/models/User';
 import SalesRep from '../../shared/models/SalesRep';
-
+import producer from '../../shared/queue/producer.ts'
 
 export const registerSalesRep = async (req: Request, res: Response): Promise<void> => {
-  const { userId } = req.body;
+  const { userId, region } = req.body;
 
   try {
     
@@ -17,10 +17,17 @@ export const registerSalesRep = async (req: Request, res: Response): Promise<voi
    
     const salesRep = new SalesRep({
       user: user._id,
+      region
     });
 
     
     await salesRep.save();
+
+    await producer({
+      key: (salesRep._id as string),
+      salesRepData: { salesRepId: salesRep._id },
+      region,
+    });
 
      res.status(201).json({
       message: 'SalesRep registered successfully',

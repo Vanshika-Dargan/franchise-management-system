@@ -1,6 +1,6 @@
 import { kafka } from './client.ts';
 
-async function init({
+export default async function init({
     key,
     salesRepData,
     region,
@@ -29,8 +29,3 @@ async function init({
     await producer.disconnect();
 }
 
-init({
-    key: '123', 
-    salesRepData: { name: 'John Doe', sales: 1000 }, 
-    region: 'north'
-});

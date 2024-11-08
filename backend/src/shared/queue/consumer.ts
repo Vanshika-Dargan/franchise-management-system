@@ -1,6 +1,6 @@
 import { kafka } from './client.ts';
 
-async function init() {
+export default async function init() {
     const consumer = kafka.consumer({ groupId: 'salesRep' });
 
     console.log('Consumer connecting...');
@@ -31,4 +31,4 @@ async function init() {
     });
 }
 
-init();
+
