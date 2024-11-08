@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 // endpoint to capture lead 
-router.post('/leads',addPointOfContact,addExternalLinks,captureLead);
+router.post('/lead',addPointOfContact,addExternalLinks,captureLead);
 
 
 
