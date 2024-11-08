@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import leadRoutes from './modules/leads/routes'
 import authRoutes from './modules/auth/routes'
+import salesRoutes from './modules/sales/routes'
 dotenv.config({ path: '../.env' });
 
 const app = express();
@@ -10,7 +11,8 @@ app.use(express.json());
 
 
 app.use('/api', leadRoutes);
-app.use('/auth',authRoutes)
+app.use('/auth',authRoutes);
+app.use('/sales',salesRoutes);
 
 
 app.get('/', (req: Request, res: Response) => {
