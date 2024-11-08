@@ -1,5 +1,9 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '../.env' });
+const brokers = process.env.KAFKA_BROKERS!.split(',');
+console.log(brokers);
 import { Kafka } from "kafkajs";
 export const kafka = new Kafka({
     clientId: "salesRefMQ",
-    brokers:['192.168.29.55']
+    brokers:brokers
     })

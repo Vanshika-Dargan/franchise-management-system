@@ -1,12 +1,9 @@
-import { Kafka } from "kafkajs";
-import dotenv from 'dotenv';
-dotenv.config({ path: '../.env' });
-const brokers = process.env.KAFKA_BROKERS!.split(',');
-console.log(brokers);
- const kafka = new Kafka({
-    clientId: "salesRefMQ",
-    brokers:brokers
-    })
+
+
+import {kafka} from './client.ts'
+
+
+
 
 async function init(){
     const admin = kafka.admin();
@@ -16,7 +13,7 @@ async function init(){
     console.log('Creating Topic: salesRepAssignment...  ');
     await admin.createTopics({
         topics: [{
-            topic: 'salesRepAssignment',
+            topic: 'salesRepAssignment4',
             numPartitions: 2,
         }]
     })
