@@ -4,7 +4,7 @@ import mongoose, { Document, Schema, Types } from 'mongoose';
 interface SalesRep extends Document {
   user: Types.ObjectId; 
   lead?: Types.ObjectId;
-  region?: string; 
+  region?: 'north' | 'south'; 
   salesTargets?: number;
 }
 
@@ -19,7 +19,11 @@ const SalesRepSchema: Schema<SalesRep> = new Schema(
       type: mongoose.Schema.Types.ObjectId, 
       ref: 'Lead',
    },
-    region: { type: String },
+    region: {     
+      type: String, 
+      enum: ['north', 'south'], 
+      default: 'north'
+      },
     salesTargets: { type: Number },
   },
   {
