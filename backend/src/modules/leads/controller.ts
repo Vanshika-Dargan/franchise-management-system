@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import Lead from '../../shared/models/Lead/Lead.ts';
-import ExternalLink from '../../shared/models/Lead/ExternalLink';
+
 
 
 export const captureLead = async (req: Request, res: Response): Promise<void> => {
